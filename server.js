@@ -5,6 +5,11 @@ app.use(express.json());
 const  jwt  =  require("jsonwebtoken");
 const SECRET="hospitalloginregisterlist";
 
+const cors=require("cors");
+app.use(cors({
+    orgin:"http://locahost:3000"
+}))
+
 const {Client} = require('pg')
 const client = new Client ({
     user:"postgres",

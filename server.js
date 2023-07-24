@@ -1,14 +1,14 @@
 const express = require('express');
 const app = express();
+const bodyParser = require("body-parser");
+app.use(bodyParser.json());
 const bcrypt = require ("bcrypt");
 app.use(express.json());
 const  jwt  =  require("jsonwebtoken");
 const SECRET="hospitalloginregisterlist";
 
 const cors=require("cors");
-app.use(cors({
-    orgin:"http://localhost:3000"
-}))
+app.use(cors());
 
 const {Client} = require('pg')
 const client = new Client ({
